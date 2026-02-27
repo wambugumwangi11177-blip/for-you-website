@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="background-animation"></div>
-    
-    <div class="container">
+
+    <!-- Password Screen -->
+    <div id="password-screen" class="password-screen">
+        <div class="password-box">
+            <h2>Enter Secret Code 🔒</h2>
+            <p>(Hint: wifi password)</p>
+            <input type="password" id="password-input" placeholder="Enter password...">
+            <button id="password-btn">Unlock ❤️</button>
+            <p id="password-error" class="error-msg" style="display: none;">Incorrect password, try again! 🥺</p>
+        </div>
+    </div>
+
+    <div class="container" id="main-content" style="display: none;">
         <header>
             <h1 class="title">For My Favorite Person</h1>
             <nav class="tabs">
@@ -38,10 +53,16 @@
                 <div class="paper-container">
                     <h3 class="paper-title">Letter For You</h3>
                     <div class="letter-content">
-                        <p>My love,</p>
-                        <p>I wanted to make something special for you, something combining your two favorite colors—red and purple! 🎨✨</p>
-                        <p>You mean the world to me, and I hope this little website brings a big smile to your beautiful face. Thank you for always being you and for making my days so much brighter.</p>
-                        <p>I love you more than words can say. ❤️💜</p>
+                        <p>I made this little site just to share what's been on my mind—I hope it brings a smile to your
+                            face. Lately, I've been thinking about you a lot, and honestly, sometimes I don't even know
+                            what to say because it all feels so genuine. No pressure at all; take all the time you
+                            need—I'm cool with that.</p>
+                        <p>What I do know is I miss your yap sessions, those endless chats where you just go off in the
+                            best way. I miss our calls and hearing your laugh—it's one of those things I keep going back
+                            to, replaying in my head.</p>
+                        <p>I also miss watching movies with you and just spending time together; being with you is
+                            always so easy and enjoyable. You're just so real and fun to be around, and that's what
+                            sticks with me the most. ❤️💜</p>
                         <p class="signature">- Yours forever</p>
                     </div>
                 </div>
@@ -49,54 +70,70 @@
 
             <!-- Music Section -->
             <section id="music" class="content-section">
-                <h2 class="section-title">Our Songs</h2>
+                <h2 class="section-title">Songs That Remind Me Of You</h2>
                 <div class="glass-card music-container">
-                    <p class="instruction-text">Here is a playlist that reminds me of you 🎶</p>
-                    <!-- Spotify Embed Example -->
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX5Ejj0EkURtP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    <p class="note-small">*(You can change this playlist link in the index.html file!)*</p>
+                    <p class="instruction-text">Just a few tracks that make me think of you 🎶</p>
+
+                    <div class="songs-list">
+                        <!-- Session 32 by Summer Walker (assuming this is what was meant by session 22) -->
+                        <iframe style="border-radius:12px; margin-bottom: 20px;"
+                            src="https://open.spotify.com/embed/track/2ktg2p94nYXY6HYeAaZk9k?utm_source=generator"
+                            width="100%" height="152" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+
+                        <!-- Wicked Games by The Weeknd -->
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/track/3034Z3L0rX2QvOunq12cR1?utm_source=generator"
+                            width="100%" height="152" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
                 </div>
             </section>
 
             <!-- Notes Section -->
             <section id="notes" class="content-section">
-                <h2 class="section-title">Reasons Why I Love You</h2>
+                <h2 class="section-title">Sweet Nothings</h2>
                 <div class="notes-grid">
                     <div class="note-card">
                         <span class="pin">📌</span>
-                        <p>Your beautiful smile that lights up any room. 😍</p>
+                        <p>I could listen to you talk about anything for hours and never get bored. 🥺</p>
                     </div>
                     <div class="note-card">
                         <span class="pin">📌</span>
-                        <p>The way you always know how to make me laugh.</p>
+                        <p>Your laugh is literally my favorite sound on earth.</p>
                     </div>
                     <div class="note-card">
                         <span class="pin">📌</span>
-                        <p>Your kindness and the way you care for others. 🥺</p>
+                        <p>I love how easy and comforting it is just simply being around you. 💜</p>
                     </div>
                     <div class="note-card">
                         <span class="pin">📌</span>
-                        <p>Because you're simply the best thing that ever happened to me. ❤️</p>
+                        <p>Thinking about our future movie nights keeps me smiling all day. 🍿❤️</p>
                     </div>
                 </div>
             </section>
 
             <!-- Gallery Section -->
             <section id="gallery" class="content-section">
-                <h2 class="section-title">Our Memories</h2>
-                <p class="instruction-text">Add your favorite photos of you two here! 📸</p>
+                <h2 class="section-title">For You 🌺</h2>
+                <p class="instruction-text">Since your favorite colors are red and purple... 📸</p>
                 <div class="gallery-grid">
                     <div class="polaroid">
-                        <div class="photo-placeholder">Replace with photo</div>
-                        <p class="caption">Our first date 💜</p>
+                        <img src="https://images.unsplash.com/photo-1548685913-fe6678babe8d?q=80&w=2600&auto=format&fit=crop"
+                            alt="Red Flowers">
+                        <p class="caption">Beautiful reds ❤️</p>
                     </div>
                     <div class="polaroid">
-                        <div class="photo-placeholder">Replace with photo</div>
-                        <p class="caption">You looking completely gorgeous ❤️</p>
+                        <img src="https://images.unsplash.com/photo-1507727181315-0588ad177114?q=80&w=2600&auto=format&fit=crop"
+                            alt="Purple Flowers">
+                        <p class="caption">Gorgeous purples 💜</p>
                     </div>
                     <div class="polaroid">
-                        <div class="photo-placeholder">Replace with photo</div>
-                        <p class="caption">A beautiful day together 🌸</p>
+                        <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=2600&auto=format&fit=crop"
+                            alt="Lilies">
+                        <p class="caption">And lilies for you ✨</p>
                     </div>
                 </div>
             </section>
@@ -105,4 +142,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
