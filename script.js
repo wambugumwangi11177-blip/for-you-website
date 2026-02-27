@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordError = document.getElementById('password-error');
 
     // The secret password (case-insensitive check later)
-    const SECRET_CODE = "wifi password";
+    const SECRET_CODE = "livv2005";
 
     function checkPassword() {
         const enteredPassword = passwordInput.value.trim().toLowerCase();
