@@ -1,15 +1,16 @@
 :root {
-    --primary: #ff4d6d;
-    --primary-hover: #e23e5c;
-    --secondary: #9d4edd;
-    --secondary-light: #c77dff;
-    --text-main: #3d3d3d;
-    --text-muted: #6c757d;
-    --bg-color: #ffccd5;
-    --bg-gradient: linear-gradient(135deg, #ffe5ec, #e0aaff);
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.6);
-    --shadow: 0 8px 32px rgba(157, 78, 221, 0.15);
+    --primary: #d90429;
+    /* Deeper romantic red */
+    --primary-hover: #ef233c;
+    --secondary: #7209b7;
+    /* Deeper romantic purple */
+    --secondary-light: #9d4edd;
+    --text-main: #2b2b2b;
+    --text-muted: #5c5c5c;
+    --bg-gradient: linear-gradient(135deg, #ffb3c1, #c77dff);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.7);
+    --shadow: 0 10px 40px rgba(114, 9, 183, 0.2);
 }
 
 * {
@@ -36,13 +37,13 @@ body {
 .background-animation::after {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     z-index: -1;
-    filter: blur(60px);
-    opacity: 0.6;
-    animation: float 10s infinite ease-in-out;
+    filter: blur(70px);
+    opacity: 0.7;
+    animation: float 12s infinite ease-in-out;
 }
 
 .background-animation::before {
@@ -55,7 +56,7 @@ body {
     background: var(--secondary);
     bottom: -50px;
     right: -50px;
-    animation-delay: -5s;
+    animation-delay: -6s;
 }
 
 @keyframes float {
@@ -66,7 +67,7 @@ body {
     }
 
     50% {
-        transform: translateY(-20px) scale(1.05);
+        transform: translateY(-30px) scale(1.1);
     }
 }
 
@@ -82,69 +83,85 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease;
 }
 
 .password-box {
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 3rem;
+    border-radius: 24px;
+    padding: 3.5rem 3rem;
     box-shadow: var(--shadow);
     text-align: center;
-    max-width: 400px;
+    max-width: 420px;
     width: 90%;
+    animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .password-box h2 {
     font-family: 'Dancing Script', cursive;
     color: var(--primary);
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
 }
 
-.password-box p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+.hint-text {
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 #password-input {
     width: 100%;
-    padding: 12px 16px;
-    border: 2px solid rgba(157, 78, 221, 0.3);
+    padding: 14px 18px;
+    border: 2px solid rgba(114, 9, 183, 0.2);
     border-radius: 12px;
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 #password-input:focus {
     border-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(114, 9, 183, 0.1);
 }
 
 #password-btn {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: 14px 24px;
     border-radius: 12px;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     cursor: pointer;
     width: 100%;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    box-shadow: 0 6px 20px rgba(217, 4, 41, 0.35);
 }
 
 #password-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(157, 78, 221, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(114, 9, 183, 0.45);
 }
 
 .error-msg {
@@ -152,7 +169,7 @@ body {
     font-weight: 500;
     margin-top: 1rem;
     margin-bottom: 0 !important;
-    font-size: 0.9rem;
+    font-size: 1rem;
     animation: shake 0.4s ease-in-out;
 }
 
@@ -164,74 +181,82 @@ body {
     }
 
     25% {
-        transform: translateX(-5px);
+        transform: translateX(-6px);
     }
 
     75% {
-        transform: translateX(5px);
+        transform: translateX(6px);
     }
 }
 
 /* Main Container */
 .container {
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    border-radius: 28px;
     box-shadow: var(--shadow);
     width: 100%;
-    max-width: 900px;
-    min-height: 80vh;
+    max-width: 950px;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    animation: fadeIn 1s ease;
+    animation: fadeIn 1.2s ease;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 2rem;
-    border-bottom: 2px solid rgba(255, 77, 109, 0.1);
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2.5rem 2rem;
+    border-bottom: 2px solid rgba(217, 4, 41, 0.15);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .title {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 4rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.8rem;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 /* Navigation Tabs */
 .tabs {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
 .tab-btn {
     background: white;
     border: 2px solid transparent;
-    padding: 0.8rem 1.5rem;
+    padding: 0.9rem 1.8rem;
     border-radius: 50px;
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--secondary);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
 }
 
 .tab-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(157, 78, 221, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(114, 9, 183, 0.2);
     color: var(--primary);
 }
 
@@ -239,29 +264,31 @@ header {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     border: none;
-    box-shadow: 0 8px 25px rgba(255, 77, 109, 0.3);
+    box-shadow: 0 10px 30px rgba(217, 4, 41, 0.35);
 }
 
 /* Content Area */
 .content-area {
-    padding: 3rem 2rem;
+    padding: 3.5rem 2.5rem;
     flex-grow: 1;
     position: relative;
 }
 
 .content-section {
     display: none;
-    animation: fadeIn 0.5s ease;
+    animation: slideUp 0.6s ease forwards;
+    opacity: 0;
 }
 
 .content-section.active {
     display: block;
+    opacity: 1;
 }
 
-@keyframes fadeIn {
+@keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
 
     to {
@@ -272,97 +299,180 @@ header {
 
 .section-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 /* Love Letter Styles */
 .paper-container {
     background: #fffafa;
-    border-left: 5px solid var(--primary);
-    padding: 2.5rem;
-    border-radius: 8px 16px 16px 8px;
-    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(217, 4, 41, 0.2);
+    border-left: 6px solid var(--primary);
+    padding: 3rem;
+    border-radius: 12px 24px 24px 12px;
+    box-shadow: 5px 8px 25px rgba(0, 0, 0, 0.06);
     position: relative;
-    background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(255, 77, 109, 0.1) 31px, rgba(255, 77, 109, 0.1) 32px);
-    line-height: 32px;
+    background-image: repeating-linear-gradient(transparent, transparent 35px, rgba(217, 4, 41, 0.08) 35px, rgba(217, 4, 41, 0.08) 36px);
+    line-height: 36px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.aesthetic-corner {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.top-left {
+    top: 15px;
+    right: 15px;
+}
+
+.bottom-right {
+    bottom: 15px;
+    left: 15px;
 }
 
 .paper-title {
     font-family: 'Dancing Script', cursive;
     color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px dashed rgba(255, 77, 109, 0.3);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px dashed rgba(217, 4, 41, 0.3);
     padding-bottom: 0.5rem;
+    text-align: center;
 }
 
 .letter-content p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     color: #4a4a4a;
+    font-weight: 300;
 }
 
 .signature {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--secondary);
     text-align: right;
-    margin-top: 2rem !important;
+    margin-top: 3rem !important;
 }
 
-/* Music Section */
+/* Custom Music Section */
 .music-container {
-    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 16px;
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .instruction-text {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
     color: var(--secondary);
     font-weight: 500;
+    text-align: center;
 }
 
-.note-small {
-    font-size: 0.85rem;
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.song-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--secondary);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.song-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(114, 9, 183, 0.15);
+    border-left-color: var(--primary);
+}
+
+.song-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    color: var(--secondary-light);
+}
+
+.song-details {
+    flex-grow: 1;
+}
+
+.song-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.song-artist {
+    font-size: 1rem;
     color: var(--text-muted);
-    margin-top: 1rem;
-    font-style: italic;
+}
+
+.play-btn {
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(217, 4, 41, 0.3);
+}
+
+.play-btn:hover {
+    background: var(--primary-hover);
+    transform: scale(1.05);
 }
 
 /* Notes Section */
 .notes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .note-card {
     background: #fff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.08);
     position: relative;
-    border-top: 4px solid var(--secondary-light);
-    transform: rotate(calc(-2deg + (4deg * var(--rand, 0.5))));
-    transition: transform 0.3s;
+    border-top: 5px solid var(--secondary-light);
+    transform: rotate(calc(-3deg + (6deg * var(--rand, 0.5))));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
 }
 
 .note-card:hover {
-    transform: scale(1.05) rotate(0deg);
+    transform: scale(1.08) rotate(0deg);
     z-index: 10;
-    box-shadow: 0 10px 25px rgba(157, 78, 221, 0.2);
+    box-shadow: 0 15px 35px rgba(114, 9, 183, 0.2);
 }
 
-/* Pseudo-random rotation for notes */
 .note-card:nth-child(1) {
     --rand: 0.2;
 }
@@ -379,61 +489,86 @@ header {
 
 .note-card:nth-child(4) {
     --rand: 0.9;
-    border-top-color: #ffb3c6;
+    border-top-color: #ffb3c1;
 }
 
 .pin {
     position: absolute;
-    top: -12px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Gallery styles */
+/* Fixed Gallery */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
 }
 
 .polaroid {
     background: white;
-    padding: 10px 10px 20px 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    padding: 12px 12px 24px 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border-radius: 4px;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.polaroid:nth-child(odd) {
+    transform: rotate(-2deg);
 }
 
 .polaroid:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.2);
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 15px 35px rgba(217, 4, 41, 0.25);
+    z-index: 5;
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #f0f0f0;
 }
 
 .polaroid img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 12px;
-    border-radius: 4px;
+    transition: transform 0.5s;
+}
+
+.polaroid:hover img {
+    transform: scale(1.03);
 }
 
 .caption {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
     color: var(--text-main);
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .title {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
 
     .tabs {
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .tab-btn {
@@ -441,7 +576,7 @@ header {
     }
 
     .paper-container {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
     }
 
     .gallery-grid {

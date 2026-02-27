@@ -20,7 +20,7 @@
     <div id="password-screen" class="password-screen">
         <div class="password-box">
             <h2>Enter Secret Code 🔒</h2>
-            <p>(Hint: wifi password)</p>
+            <p class="hint-text">(Hint: wifi password / your name and year born)</p>
             <input type="password" id="password-input" placeholder="Enter password...">
             <button id="password-btn">Unlock ❤️</button>
             <p id="password-error" class="error-msg" style="display: none;">Incorrect password, try again! 🥺</p>
@@ -29,6 +29,7 @@
 
     <div class="container" id="main-content" style="display: none;">
         <header>
+            <div class="floating-petals"></div>
             <h1 class="title">For My Favorite Person</h1>
             <nav class="tabs">
                 <button class="tab-btn active" data-target="letter">
@@ -51,6 +52,9 @@
             <section id="letter" class="content-section active">
                 <h2 class="section-title">Dearest,</h2>
                 <div class="paper-container">
+                    <div class="aesthetic-corner top-left">💜</div>
+                    <div class="aesthetic-corner bottom-right">❤️</div>
+
                     <h3 class="paper-title">Letter For You</h3>
                     <div class="letter-content">
                         <p>I made this little site just to share what's been on my mind—I hope it brings a smile to your
@@ -75,19 +79,25 @@
                     <p class="instruction-text">Just a few tracks that make me think of you 🎶</p>
 
                     <div class="songs-list">
-                        <!-- Session 32 by Summer Walker (assuming this is what was meant by session 22) -->
-                        <iframe style="border-radius:12px; margin-bottom: 20px;"
-                            src="https://open.spotify.com/embed/track/2ktg2p94nYXY6HYeAaZk9k?utm_source=generator"
-                            width="100%" height="152" frameBorder="0" allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"></iframe>
+                        <div class="song-card">
+                            <div class="song-icon">🎧</div>
+                            <div class="song-details">
+                                <h4 class="song-name">Session 32</h4>
+                                <p class="song-artist">Summer Walker</p>
+                            </div>
+                            <a href="https://open.spotify.com/track/2ktg2p94nYXY6HYeAaZk9k" target="_blank"
+                                class="play-btn">Play Track ▶</a>
+                        </div>
 
-                        <!-- Wicked Games by The Weeknd -->
-                        <iframe style="border-radius:12px"
-                            src="https://open.spotify.com/embed/track/3034Z3L0rX2QvOunq12cR1?utm_source=generator"
-                            width="100%" height="152" frameBorder="0" allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"></iframe>
+                        <div class="song-card">
+                            <div class="song-icon">🎧</div>
+                            <div class="song-details">
+                                <h4 class="song-name">Wicked Games</h4>
+                                <p class="song-artist">The Weeknd</p>
+                            </div>
+                            <a href="https://open.spotify.com/track/3034Z3L0rX2QvOunq12cR1" target="_blank"
+                                class="play-btn">Play Track ▶</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -121,18 +131,24 @@
                 <p class="instruction-text">Since your favorite colors are red and purple... 📸</p>
                 <div class="gallery-grid">
                     <div class="polaroid">
-                        <img src="https://images.unsplash.com/photo-1548685913-fe6678babe8d?q=80&w=2600&auto=format&fit=crop"
-                            alt="Red Flowers">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1548685913-fe6678babe8d?q=80&w=800&auto=format&fit=crop"
+                                alt="Red Flowers">
+                        </div>
                         <p class="caption">Beautiful reds ❤️</p>
                     </div>
                     <div class="polaroid">
-                        <img src="https://images.unsplash.com/photo-1507727181315-0588ad177114?q=80&w=2600&auto=format&fit=crop"
-                            alt="Purple Flowers">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1507727181315-0588ad177114?q=80&w=800&auto=format&fit=crop"
+                                alt="Purple Flowers">
+                        </div>
                         <p class="caption">Gorgeous purples 💜</p>
                     </div>
                     <div class="polaroid">
-                        <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=2600&auto=format&fit=crop"
-                            alt="Lilies">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=800&auto=format&fit=crop"
+                                alt="Lilies">
+                        </div>
                         <p class="caption">And lilies for you ✨</p>
                     </div>
                 </div>
@@ -140,7 +156,8 @@
         </main>
     </div>
 
-    <script src="script.js?v=2"></script>
+    <!-- Force script refresh cache -->
+    <script src="script.js?v=3"></script>
 </body>
 
 </html>
