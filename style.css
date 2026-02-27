@@ -539,6 +539,21 @@ header {
     border-top-color: #ffb3c1;
 }
 
+.note-card:nth-child(5) {
+    --rand: 0.3;
+    border-top-color: var(--primary);
+}
+
+.note-card:nth-child(6) {
+    --rand: 0.7;
+    border-top-color: var(--secondary-light);
+}
+
+.note-card:nth-child(7) {
+    --rand: 0.25;
+    border-top-color: #ffc2d1;
+}
+
 .pin {
     position: absolute;
     top: -15px;
