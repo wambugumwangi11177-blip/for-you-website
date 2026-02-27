@@ -12,14 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkPassword() {
         const enteredPassword = passwordInput.value.trim().toLowerCase();
         if (enteredPassword === SECRET_CODE) {
-            // Success: hide password screen, show main content
+            // Success: hide password screen, show welcome screen
             passwordScreen.style.opacity = '0';
             setTimeout(() => {
                 passwordScreen.style.display = 'none';
-                mainContent.style.display = 'flex';
+
+                // Show welcome screen
+                const welcomeScreen = document.getElementById('welcome-screen');
+                welcomeScreen.style.display = 'flex';
+
                 // Trigger the hearts animation to start
                 startHeartAnimation();
-            }, 500);
+
+                // Wait 3 seconds, then hide welcome screen and show main content
+                setTimeout(() => {
+                    welcomeScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        welcomeScreen.style.display = 'none';
+                        mainContent.style.display = 'flex';
+                    }, 1000); // Wait for fade out
+                }, 3000); // Time to read welcome message
+
+            }, 500); // Wait for password screen fade out
         } else {
             // Fail: show error
             passwordError.style.display = 'block';
