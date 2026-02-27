@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="title">For My Favorite Person</h1>
+            <nav class="tabs">
+                <button class="tab-btn active" data-target="letter">
+                    <span class="icon">❤️</span> Love Letter
+                </button>
+                <button class="tab-btn" data-target="music">
+                    <span class="icon">🎵</span> Music
+                </button>
+                <button class="tab-btn" data-target="notes">
+                    <span class="icon">📝</span> Notes
+                </button>
+                <button class="tab-btn" data-target="gallery">
+                    <span class="icon">🌷</span> Gallery
+                </button>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <!-- Love Letter Section -->
+            <section id="letter" class="content-section active">
+                <h2 class="section-title">Dearest,</h2>
+                <div class="paper-container">
+                    <h3 class="paper-title">Letter For You</h3>
+                    <div class="letter-content">
+                        <p>My love,</p>
+                        <p>I wanted to make something special for you, something combining your two favorite colors—red and purple! 🎨✨</p>
+                        <p>You mean the world to me, and I hope this little website brings a big smile to your beautiful face. Thank you for always being you and for making my days so much brighter.</p>
+                        <p>I love you more than words can say. ❤️💜</p>
+                        <p class="signature">- Yours forever</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Music Section -->
+            <section id="music" class="content-section">
+                <h2 class="section-title">Our Songs</h2>
+                <div class="glass-card music-container">
+                    <p class="instruction-text">Here is a playlist that reminds me of you 🎶</p>
+                    <!-- Spotify Embed Example -->
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX5Ejj0EkURtP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <p class="note-small">*(You can change this playlist link in the index.html file!)*</p>
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section id="notes" class="content-section">
+                <h2 class="section-title">Reasons Why I Love You</h2>
+                <div class="notes-grid">
+                    <div class="note-card">
+                        <span class="pin">📌</span>
+                        <p>Your beautiful smile that lights up any room. 😍</p>
+                    </div>
+                    <div class="note-card">
+                        <span class="pin">📌</span>
+                        <p>The way you always know how to make me laugh.</p>
+                    </div>
+                    <div class="note-card">
+                        <span class="pin">📌</span>
+                        <p>Your kindness and the way you care for others. 🥺</p>
+                    </div>
+                    <div class="note-card">
+                        <span class="pin">📌</span>
+                        <p>Because you're simply the best thing that ever happened to me. ❤️</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="content-section">
+                <h2 class="section-title">Our Memories</h2>
+                <p class="instruction-text">Add your favorite photos of you two here! 📸</p>
+                <div class="gallery-grid">
+                    <div class="polaroid">
+                        <div class="photo-placeholder">Replace with photo</div>
+                        <p class="caption">Our first date 💜</p>
+                    </div>
+                    <div class="polaroid">
+                        <div class="photo-placeholder">Replace with photo</div>
+                        <p class="caption">You looking completely gorgeous ❤️</p>
+                    </div>
+                    <div class="polaroid">
+                        <div class="photo-placeholder">Replace with photo</div>
+                        <p class="caption">A beautiful day together 🌸</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
